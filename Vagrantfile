@@ -8,6 +8,9 @@ module VagrantPlugins
   end
 end
 
+DOCKER_VERSION    = "1.13.0"
+WHALEBREW_VERSION = "0.0.2"
+
 Vagrant.configure(2) do |config|
   config.vm.define "whalebrew-barge"
 
@@ -18,9 +21,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell do |sh|
     sh.privileged = false
     sh.inline = <<-EOT
-      sudo /etc/init.d/docker restart v1.13.0
+      sudo /etc/init.d/docker restart #{DOCKER_VERSION}
 
-      sudo wget -qO /opt/bin/whalebrew "https://github.com/bfirsh/whalebrew/releases/download/0.0.2/whalebrew-$(uname -s)-$(uname -m)"
+      sudo wget -qO /opt/bin/whalebrew "https://github.com/bfirsh/whalebrew/releases/download/#{WHALEBREW_VERSION}/whalebrew-$(uname -s)-$(uname -m)"
       sudo chmod +x /opt/bin/whalebrew
 
       echo "\nexport WHALEBREW_INSTALL_PATH=/opt/bin" >> ~/.bashrc
