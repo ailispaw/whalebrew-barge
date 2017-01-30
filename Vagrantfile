@@ -9,7 +9,7 @@ module VagrantPlugins
 end
 
 DOCKER_VERSION    = "1.13.0"
-WHALEBREW_VERSION = "0.0.2"
+WHALEBREW_VERSION = "0.0.3"
 
 Vagrant.configure(2) do |config|
   config.vm.define "whalebrew-barge"
