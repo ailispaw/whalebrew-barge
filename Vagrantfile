@@ -8,7 +8,7 @@ module VagrantPlugins
   end
 end
 
-DOCKER_VERSION    = "17.03.0-ce"
+DOCKER_VERSION    = "17.03.1-ce"
 WHALEBREW_VERSION = "0.1.0"
 
 Vagrant.configure(2) do |config|
